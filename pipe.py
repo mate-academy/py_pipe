@@ -1,21 +1,22 @@
 """docstring"""
 
 
-def calc(x: float, *funcs: int) -> float:
+def calc(val: float, *_funcs: int) -> float:
     """calc"""
-    for i in locals()["funcs"]:
+    def zero(inp):
+        return inp * inp
+
+    def first(inp):
+        return inp // 2
+
+    def second(inp):
+        return inp + 4
+
+    for i in locals()["_funcs"]:
         if i == 2:
-            a = lambda x: x + 4
-            x = a(x)
+            val = second(val)
         elif i == 1:
-            b = lambda x: x// 2
-            x = b(x)
+            val = first(val)
         elif i == 0:
-            c = lambda x: x * x
-            x = c(x)
-
-    print(x)
-    return x
-
-
-calc(0, 2, 2, 2)
+            val = zero(val)
+    return val
