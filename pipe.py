@@ -11,8 +11,8 @@ def calc(val: float, *_funcs: int) -> float:
 
     def second(inp):
         return inp + 4
-
-    for i in locals()["_funcs"]:
+    func_order = locals()["_funcs"]
+    for i in func_order:
         if i == 2:
             val = second(val)
         elif i == 1:
