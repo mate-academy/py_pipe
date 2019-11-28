@@ -17,7 +17,7 @@ def calc(num: float, *funcs: int) -> float:
     :param funcs: int
     :return: float
     """
-    func_dict = (
+    func_tuple = (
         lambda x: x * x,
         lambda x: x // 2,
         lambda x: x + 4
@@ -25,5 +25,5 @@ def calc(num: float, *funcs: int) -> float:
 
     result_num = num
     for _, func in enumerate(funcs):
-        result_num = func_dict[func](result_num)
+        result_num = func_tuple[func](result_num)
     return result_num
