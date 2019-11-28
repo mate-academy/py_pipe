@@ -17,13 +17,13 @@ def calc(num: float, *funcs: int) -> float:
     :param funcs: int
     :return: float
     """
-    func_dict = {
-        0: lambda x: x * x,
-        1: lambda x: x // 2,
-        2: lambda x: x + 4
-    }
+    func_dict = (
+        lambda x: x * x,
+        lambda x: x // 2,
+        lambda x: x + 4
+    )
 
     result_num = num
-    for func in funcs:
+    for _, func in enumerate(funcs):
         result_num = func_dict[func](result_num)
     return result_num
