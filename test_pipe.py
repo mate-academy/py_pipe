@@ -34,3 +34,4 @@ def test_222():
     :return:
     """
     assert pipe.calc(0, 2, 2, 2) == 12
+   
