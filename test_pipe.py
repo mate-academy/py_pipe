@@ -14,4 +14,5 @@ def test_210():
 
 
 def test_222():
-    assert pipe.calc(0, 2, 2, 2) == 12
+    assert pipe.calc(1, 2, 2, 2) == 13
+
